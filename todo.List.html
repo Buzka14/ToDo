@@ -15,29 +15,28 @@
   
   <body>
     <h1>Todo List</h1>
+    <div id = "btns">
+      <div class = "btn">
+        <button onclick="handlers.addTodo()">Add</button>
+        <input id = "addTodoTextInput" type ="text">
+      </div>
 
-    <div>
-      <button onclick="handlers.addTodo()">Add</button>
-      <input id = "addTodoTextInput" type ="text">
+      <div class = "btn">
+        <button onclick="handlers.changeTodo()">Change Todo</button>
+        <input id = "changeTodoPositionInput" type="number">
+        <input id = "changeTodoTextInput" type="text">
+      </div>
+
+
+      <div class = "btn">
+        <button onclick="handlers.toggleAll()">Toggle All</button>
+      </div>
+
+      <div class = "list">
+        <ul>
+        </ul>
+      </div>
     </div>
-
-    <div>
-      <button onclick="handlers.changeTodo()">Change Todo</button>
-      <input id = "changeTodoPositionInput" type="number">
-      <input id = "changeTodoTextInput" type="text">
-    </div>
-
-    <div>
-      <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
-      <input id = "toggleCompletedPositionInput" type="number">
-    </div>
-
-    <div>
-      <button onclick="handlers.toggleAll()">Toggle</button>
-    </div>
-
-    <ul>
-    </ul>
 
     <script src="javascriptpractical.js"></script>
     

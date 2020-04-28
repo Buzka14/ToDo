@@ -53,10 +53,8 @@ var handlers = {
     todoList.deleteTodo(position);
     view.displayTodos();
   },
-  toggleCompleted: function(){
-    var toggleCompletedPositionInput = document.getElementById ('toggleCompletedPositionInput');
-    todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
-    toggleCompletedPositionInput.value = '';
+  toggleCompleted: function(position){
+    todoList.toggleCompleted(position);
     view.displayTodos();
   },
   toggleAll: function(){
@@ -81,6 +79,8 @@ var view = {
       todoLi.textContent = todoTextWithCompletion; // <li>( ) cook</li>
       todoLi.appendChild(this.createDeleteButton());
       todosUl.appendChild(todoLi);
+      todoLi.appendChild(this.createToggleButton());
+      todosUlappendChild(todoLi);
     }, this);
   },
   createDeleteButton: function(){
@@ -89,13 +89,21 @@ var view = {
     deleteButton.className = 'deleteButton';
     return deleteButton;
   },
+  createToggleButton: function(){
+    var toggleButton = document.createElement('button');
+    toggleButton.textContent = 'Toggle';
+    toggleButton.className = 'toggleButton';
+    return toggleButton;
+  },
   setUpEventListeners: function(){
     var todoUl = document.querySelector('ul');
     todoUl.addEventListener('click', function(event) {
       var elementClicked = event.target; // specify which element was clicked!
       if (elementClicked.className === 'deleteButton'){
         handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
-      } 
+      } else if (elementClicked.className === 'toggleButton') {
+        handlers.toggleCompleted(parseInt(elementClicked.parentNode.id));
+      }
     });
   }
 };
