@@ -3,36 +3,36 @@
 <html>
   <head>
     <title> Practical JavaScript </title>
-
+    
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lato&display=swap" rel="stylesheet">
-
+    
     <link rel="stylesheet" href="todo.css">
 
   </head>
   
-  
   <body>
     <h1>Todo List</h1>
-    <div id = "btns">
-      <div class = "btn">
-        <button onclick="handlers.addTodo()">Add</button>
-        <input id = "addTodoTextInput" type ="text">
+    <div id="container">
+      <div class="row">
+        <div>
+          <button onclick = "handlers.addTodo()">Add</button>
+        </div>
+        <div>
+          <input id = "addTodoTextInput" type ="text">
+        </div>
       </div>
 
-      <div class = "btn">
-        <button onclick="handlers.changeTodo()">Change Todo</button>
+      <div class="row">
+        <button onclick="handlers.changeTodo()">Change</button>
         <input id = "changeTodoPositionInput" type="number">
         <input id = "changeTodoTextInput" type="text">
       </div>
 
-
-      <div class = "btn">
+      <div class="row">
         <button onclick="handlers.toggleAll()">Toggle All</button>
       </div>
 
-      <div class = "list">
+      <div>
         <ul>
         </ul>
       </div>
