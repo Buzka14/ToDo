@@ -79,7 +79,7 @@ var view = {
       todoLi.textContent = todoTextWithCompletion; // <li>( ) cook</li>
       todoLi.appendChild(this.createDeleteButton());
       todosUl.appendChild(todoLi);
-      todoLi.appendChild(this.createToggleButton());
+      todoLi.appendChild(this.createCheckBox()); //createToggleButton
       todosUl.appendChild(todoLi);
     }, this);
   },
@@ -95,6 +95,13 @@ var view = {
     toggleButton.className = 'toggleButton';
     return toggleButton;
   },
+  // createCheckBox: function(){
+  //   var checkBox = document.createElement('input');
+  //   checkBox.setAttribute("type", "checkbox");
+  //   checkBox.className = "checkBox";
+  //   return checkBox;
+  // },
+
   setUpEventListeners: function(){
     var todoUl = document.querySelector('ul');
     todoUl.addEventListener('click', function(event) {
@@ -102,7 +109,7 @@ var view = {
      // specify which element was clicked!
       if (elementClicked.className === 'deleteButton'){
         handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
-      } else if (elementClicked.className === 'toggleButton') {
+      } else if (elementClicked.className === 'checkBox') { //toggleButton
         handlers.toggleCompleted(parseInt(elementClicked.parentNode.id));
       }
     });
