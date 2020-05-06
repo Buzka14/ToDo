@@ -2,7 +2,9 @@ h1 {
   font-family: 'Bangers', cursive;
   font-size: 80px;
   text-align: center;
-  color:#734577
+  color:#734577;
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+
 }
 
 body {
@@ -12,6 +14,9 @@ body {
 
 ul {
   list-style-type: none;
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+  color: #734577;
 }
 
 #changeTodoPositionInput {
@@ -19,7 +24,12 @@ ul {
   height: 20px;
   border-radius: 5px;
   margin-left: 1px;
- 
+  outline: none !Important;
+  background-color: #d1f768;
+  color: #734577;
+  font-family: 'Indie Flower', cursive;
+  font-size:18px;
+  border-top-left-radius: initial;
 }
 
 #changeTodoTextInput {
@@ -27,33 +37,36 @@ ul {
   height: 20px;
   border-radius: 5px;
   margin-left: 1px;
-
+  outline: none !Important;
+  background-color: #d1f768;
+  color: #734577;
+  font-family: 'Indie Flower', cursive;
+  font-size:18px;
+  border-top-left-radius: initial;
 }
 
 #addTodoTextInput {
   width: 100px;
   height: 20px;
   border-radius: 5px;
+  outline: none !Important;
+  background-color: #d1f768;
+  font-family: 'Indie Flower', cursive;
+  font-size:18px;
+  color: #734577;
+  border-top-left-radius: initial;
 }
+
 button{
-  background-color: #d6f384;
+  background-color: #d1f768;
   border-radius: 5px;
   height: 30px;
   margin: 5px;
-}
-
-#container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-  margin: 0vh 100vh 0vh 138vh;
-  width: 250px;
-}
-
-.row {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
+  outline: none !Important;
+  color: #734577;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12x;
+  border-top-left-radius: initial;
+  border-top-color:  solid, #734577, 7px;
+  border-left: solid, #734577, 2px;
 }
