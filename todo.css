@@ -3,8 +3,13 @@ h1 {
   font-size: 80px;
   text-align: center;
   color:#734577;
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-
+  background: linear-gradient(145deg, #f56c6c, #ffac68, #faf875, #abfa8c, #8df7e5, #8d9ff8, #c18df8, #fd78e0, #f56c6c);
+  padding: 20px;
+  margin: initial;
+  margin-left: 550px;
+  margin-right: 550px;
+  border-radius: 50px;
+  border-top-left-radius: initial;
 }
 
 body {
@@ -56,8 +61,7 @@ ul {
   color: #734577;
   border-top-left-radius: initial;
 }
-
-button{
+button {
   background-color: #d1f768;
   border-radius: 5px;
   height: 30px;
@@ -70,3 +74,54 @@ button{
   border-top-color:  solid, #734577, 7px;
   border-left: solid, #734577, 2px;
 }
+
+ul li.checked:before {
+  content:'\2713';
+  display:inline-block;
+  color:#734577;
+  padding:0 0px 0 0;
+  background: #d1f768;
+  background-color: #d1f768;
+  border-radius: 5px;
+  border-top-left-radius: initial;
+  border-color: #734577;
+  height: 25px;
+  width: 22px;
+  margin: 5px;
+}
+
+ul li
+{list-style-type: none; font-size:1em;
+}
+
+/* ul li:nth-child(odd) {
+  background: #d1f768;
+  margin: initial;
+  margin-left: 550px;
+  margin-right: 550px;
+  border-radius: 50px;
+  border-top-left-radius: initial;
+} */
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  margin: 5px;
+  background: #e9f8bf;
+  font-size: 18px;
+  transition: 0.2s;
+
+  
+  
+
+  /* make the list items unselectable */
+  /* -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; */
+}
+
+
+
+
+  

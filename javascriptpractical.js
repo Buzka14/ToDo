@@ -34,6 +34,7 @@ var todoList = {
     });
   }
 };
+
 var handlers = {
   addTodo: function(){
     var addTodoTextInput = document.getElementById ('addTodoTextInput');
@@ -53,6 +54,10 @@ var handlers = {
     todoList.deleteTodo(position);
     view.displayTodos();
   },
+  // checkTodo: function(position){
+  //   todoList.checkTodo(position);
+  //   view.displayTodos();
+  // },
   toggleCompleted: function(position){
     todoList.toggleCompleted(position);
     view.displayTodos();
@@ -62,44 +67,40 @@ var handlers = {
     view.displayTodos();
   }
 };
+
 var view = {
   displayTodos: function(){
     var todosUl = document.querySelector('ul');
     todosUl.innerHTML = '';
     todoList.todos.forEach(function(todo, position){
-      var todoLi = document.createElement('li'); // <li></li>
-      var todoTextWithCompletion = '';
 
+      var todoLi = document.createElement('LI'); // <li></li>
+      var todoTextWithCompletion = '';
       if (todo.completed === true){
-        todoTextWithCompletion = '(x) ' + todo.todoText;
+        todoTextWithCompletion = todo.todoText;
       } else {
-        todoTextWithCompletion = '( ) ' + todo.todoText;
+        todoTextWithCompletion = todo.todoText;
       }
       todoLi.id = position;
       todoLi.textContent = todoTextWithCompletion; // <li>( ) cook</li>
       todoLi.appendChild(this.createDeleteButton());
       todosUl.appendChild(todoLi);
-      todoLi.appendChild(this.createCheckBox()); //createToggleButton
-      todosUl.appendChild(todoLi);
+      // todoLi.appendChild(this.createToggleButton()); 
+      // todosUl.appendChild(todoLi);
     }, this);
   },
+
   createDeleteButton: function(){
     var deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Delete';
+    deleteButton.textContent = 'X' ;
     deleteButton.className = "deleteButton";
     return deleteButton;
   },
-  createToggleButton: function(){
-    var toggleButton = document.createElement('button');
-    toggleButton.textContent = 'Toggle';
-    toggleButton.className = 'toggleButton';
-    return toggleButton;
-  },
-  // createCheckBox: function(){
-  //   var checkBox = document.createElement('input');
-  //   checkBox.setAttribute("type", "checkbox");
-  //   checkBox.className = "checkBox";
-  //   return checkBox;
+  // createToggleButton: function(){
+  //   var toggleButton = document.createElement('button');
+  //   toggleButton.textContent = 'Toggle';
+  //   toggleButton.className = 'toggleButton';
+  //   return toggleButton;
   // },
 
   setUpEventListeners: function(){
@@ -109,15 +110,13 @@ var view = {
      // specify which element was clicked!
       if (elementClicked.className === 'deleteButton'){
         handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
-      } else if (elementClicked.className === 'checkBox') { //toggleButton
-        handlers.toggleCompleted(parseInt(elementClicked.parentNode.id));
+      // } else if (elementClicked.className === 'toggle button') { 
+      } else if (elementClicked.tagName === 'LI') {
+        elementClicked.classList.toggle('checked');
+        // handlers.toggleCompleted(parseInt(elementClicked.id));
       }
-    });
-  }
+    }, false);
+  },
+
 };
 view.setUpEventListeners();
-
-
-
-
-
